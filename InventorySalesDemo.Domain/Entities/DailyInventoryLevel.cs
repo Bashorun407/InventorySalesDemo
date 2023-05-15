@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Entities
 {
-    public class DailyInventoryLevel
+    public class DailyInventoryLevel : AuditableBaseEntity
     {
 
         [Key]

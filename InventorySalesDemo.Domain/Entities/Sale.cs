@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Entities
 {
-    public class Sale : IBaseClass
+    public class Sale : AuditableBaseEntity, IBaseClass
     {
         [Key]
         public int Id { get; set; } //Sales_Id

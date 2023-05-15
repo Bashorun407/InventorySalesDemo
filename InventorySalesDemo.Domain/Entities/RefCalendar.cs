@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventorySalesDemo.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Entities
 {
-    public class RefCalendar
+    public class RefCalendar : AuditableBaseEntity
     {
         [Key]
         public DateTime Day_Date { get; set; }

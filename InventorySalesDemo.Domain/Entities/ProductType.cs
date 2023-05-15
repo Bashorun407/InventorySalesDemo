@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Entities
 {
-    public class ProductType 
+    public class ProductType : AuditableBaseEntity
     {
         [Key]
         public int Product_Type_Code { get; set; } //Product_Type_Code
