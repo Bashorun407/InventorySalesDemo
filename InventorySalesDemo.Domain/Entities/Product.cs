@@ -26,7 +26,7 @@ namespace InventorySalesDemo.Domain.Entities
         public string? Product_Description { get; set;}
         [Required (ErrorMessage ="Data entry should be in strings"),DataType(DataType.Text) , MaxLength(50)]
         public string? Product_Category { get; set;}
-        [Required(ErrorMessage ="Data entry should be in integers")]
+        [Required(ErrorMessage ="Data entry should be in integers"), Range(1, uint.MaxValue)]
         public int Reorder_Quantity { get;set; }
 
         //Has One to Many mapping with ProductInSale table
