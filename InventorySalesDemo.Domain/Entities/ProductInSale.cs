@@ -17,7 +17,7 @@ namespace InventorySalesDemo.Domain.Entities
         [Key]  
         public int Product_Id { get; set;}
 
-        [Required(ErrorMessage ="Data entry has to be integer"), DataType("integer")]
+        [Required(ErrorMessage ="Data entry has to be integer")]
         public int Quantity { get;set; }
 
     }

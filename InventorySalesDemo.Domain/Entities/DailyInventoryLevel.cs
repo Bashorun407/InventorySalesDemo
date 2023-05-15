@@ -18,7 +18,7 @@ namespace InventorySalesDemo.Domain.Entities
         [Key]
         public int Product_Id { get; set; }
 
-        [Required(ErrorMessage = "Data entry has to be string"),DataType("string"), MaxLength(20)]
+        [Required(ErrorMessage = "Data entry has to be text"),DataType(DataType.Text), MaxLength(20)]
         public string? Level { get; set;}
 
     }

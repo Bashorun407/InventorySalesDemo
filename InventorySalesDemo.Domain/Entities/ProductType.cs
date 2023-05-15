@@ -17,7 +17,7 @@ namespace InventorySalesDemo.Domain.Entities
         [ForeignKey(nameof(Product))]
         public int Parent_Product_Type_Code { get; set; }
 
-        [DataType("string"), MaxLength(100)]
+        [DataType(DataType.Text), MaxLength(100)]
         public string? Product_Type_Description { get; set; }
 
         //Has One to many mapping with Product table
