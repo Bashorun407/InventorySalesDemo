@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventorySalesDemo.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Entities
 {
-    public class ProductType
+    public class ProductType 
     {
         [Key]
-        public int Product_Type_Code { get; set; }
+        public int Product_Type_Code { get; set; } //Product_Type_Code
 
         [ForeignKey(nameof(Product))]
         public int Parent_Product_Type_Code { get; set; }

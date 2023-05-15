@@ -11,7 +11,6 @@ namespace InventorySalesDemo.Domain.Entities
     public class RefCalendar
     {
         [Key]
-        [ForeignKey(nameof(DailyInventoryLevel))]
         public DateTime Day_Date { get; set; }
 
         //Has one to many mapping to DailyInventoryLevel table

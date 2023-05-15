@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventorySalesDemo.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,12 +12,12 @@ namespace InventorySalesDemo.Domain.Entities
     public class ProductInSale
     {
         [Key]
-        public int Sales_Id { get; set; }
+        public int Sales_Id { get; set; } //Sales_Id
 
         [Key]  
         public int Product_Id { get; set;}
 
-        [Required, DataType("integer")]
+        [Required(ErrorMessage ="Data entry has to be integer"), DataType("integer")]
         public int Quantity { get;set; }
 
     }
