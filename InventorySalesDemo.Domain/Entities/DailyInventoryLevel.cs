@@ -13,7 +13,7 @@ namespace InventorySalesDemo.Domain.Entities
         [Key]
         public DateTime Day_Date { get; set; }
 
-        [ForeignKey(nameof(Product))]
+        [Key]
         public int Product_Id { get; set; }
 
         [Required,DataType("string"), MaxLength(20)]
