@@ -15,4 +15,8 @@ namespace InventorySalesDemo.Application.Common
         void Update(T entity);
         void Delete(T entity);
     }
+
+    public class T
+    {
+    }
 }
