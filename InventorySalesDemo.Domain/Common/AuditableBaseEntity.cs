@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Domain.Common
 {
-    public abstract class AuditableBaseEntity : IBaseClass
+    public abstract class AuditableBaseEntity 
     {
         public int Id { get; set; }
         public string? StaffId { get; set; }
