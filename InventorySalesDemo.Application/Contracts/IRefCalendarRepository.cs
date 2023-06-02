@@ -9,9 +9,9 @@ namespace InventorySalesDemo.Application.Contracts
 {
     public interface IRefCalendarRepository
     {
-        Task<IEnumerable<RefCalendar>> GetAllAsync(bool trackChanges);
-        Task<RefCalendar> GetRefCalendarById(int Id, bool trackChanges);
+        Task<IEnumerable<RefCalendar>> GetAllRefCalendarAsync(bool trackChanges);
         void CreateRefCalendar(RefCalendar entity);
+        void UpdateRefCalendar(RefCalendar entity);
         void DeleteRefCalendar(RefCalendar entity);
     }
 }

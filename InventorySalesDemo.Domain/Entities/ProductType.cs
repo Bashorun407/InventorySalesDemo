@@ -11,14 +11,14 @@ namespace InventorySalesDemo.Domain.Entities
 {
     public class ProductType : AuditableBaseEntity
     {
-        [Key]
-        public int Product_Type_Code { get; set; } //Product_Type_Code
 
-        [ForeignKey(nameof(Product))]
-        public int Parent_Product_Type_Code { get; set; }
+        [DataType(DataType.Text), MaxLength(20)]
+        [Required(ErrorMessage ="Category name is required.")]
+        public string Category_Name { get; set; }
 
         [DataType(DataType.Text), MaxLength(100)]
-        public string? Product_Type_Description { get; set; }
+        [Required(ErrorMessage ="Category description is required")]
+        public string? Category_Description { get; set; }
 
         //Has One to many mapping with Product table
         List<IEnumerable<Product>>? Products { get; set; }

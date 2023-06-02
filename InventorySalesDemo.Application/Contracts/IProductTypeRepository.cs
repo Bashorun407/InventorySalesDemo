@@ -9,9 +9,10 @@ namespace InventorySalesDemo.Application.Contracts
 {
     public interface IProductTypeRepository
     {
-        Task<IEnumerable<ProductType>> GetAllAsync(bool trackChanges);
+        Task<IEnumerable<ProductType>> GetAllProductTypeAsync(bool trackChanges);
         Task<ProductType> GetProductTypeById(int Id, bool trackChanges);
         void CreateProductType(ProductType entity);
+        void UpdateProductType(ProductType entity);
         void DeleteProductType(ProductType entity);
     }
 }

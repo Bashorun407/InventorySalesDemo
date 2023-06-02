@@ -9,9 +9,10 @@ namespace InventorySalesDemo.Application.Contracts
 {
     public interface IDailyInventoryLevelRepository
     {
-        Task<IEnumerable<DailyInventoryLevel>> GetAllAsync(bool trackChanges);
+        Task<IEnumerable<DailyInventoryLevel>> GetAllDailyInventoryLevelAsync(bool trackChanges);
         Task<DailyInventoryLevel> GetDailyInventoryLevelById(int Id, bool trackChanges);
         void CreateDailyInventoryLevel(DailyInventoryLevel entity);
+        void UpdateDailyInventoryLevel(DailyInventoryLevel entity);
         void DeleteDailyInventoryLevel(DailyInventoryLevel entity);
     }
 }

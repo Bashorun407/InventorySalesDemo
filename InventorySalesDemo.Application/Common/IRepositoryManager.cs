@@ -1,4 +1,4 @@
-﻿using InventorySalesDemo.Application.Repository;
+﻿using InventorySalesDemo.Application.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +9,13 @@ namespace InventorySalesDemo.Application.Common
 {
     public interface IRepositoryManager
     {
+        IDailyInventoryLevelRepository dailyInventoryLevelRepository { get; }
+        IProductInSaleRepository productInSaleRepository { get; }
+        IProductRepository productRepository { get; }
+        IProductTypeRepository productTypeRepository { get; }
+        IRefCalendarRepository refCalendarRepository { get; }
+        ISaleRepository saleRepository { get; }
+        Task SaveAsync();
+        
     }
 }
