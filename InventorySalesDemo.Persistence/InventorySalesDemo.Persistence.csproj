@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\InventorySalesDemo.Application\InventorySalesDemo.Application.csproj" />
     <ProjectReference Include="..\InventorySalesDemo.Domain\InventorySalesDemo.Domain.csproj" />
     <ProjectReference Include="..\InventorySalesDemo.ServiceRepository\InventorySalesDemo.ServiceRepository.csproj" />
