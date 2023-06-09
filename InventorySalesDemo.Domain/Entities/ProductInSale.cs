@@ -25,3 +25,4 @@ namespace InventorySalesDemo.Domain.Entities
     }
 
 }
+

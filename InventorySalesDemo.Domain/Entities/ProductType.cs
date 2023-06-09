@@ -14,7 +14,7 @@ namespace InventorySalesDemo.Domain.Entities
 
         [DataType(DataType.Text), MaxLength(20)]
         [Required(ErrorMessage ="Category name is required.")]
-        public string Category_Name { get; set; }
+        public string? Category_Name { get; set; }
 
         [DataType(DataType.Text), MaxLength(100)]
         [Required(ErrorMessage ="Category description is required")]
@@ -25,3 +25,4 @@ namespace InventorySalesDemo.Domain.Entities
 
     }
 }
+
