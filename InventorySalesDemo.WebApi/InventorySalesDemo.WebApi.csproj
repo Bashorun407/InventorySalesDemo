@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InventorySalesDemo.Persistence\InventorySalesDemo.Persistence.csproj" />
+    <ProjectReference Include="..\LoggerService\LoggerService.csproj" />
   </ItemGroup>
 
 </Project>
