@@ -10,6 +10,7 @@ namespace InventorySalesDemo.Application.DTOs.DtoForCreation
 {
     public class ProductTypeDtoForCreation
     {
+
         [DataType(DataType.Text), MaxLength(20)]
         [Required(ErrorMessage = "Category name is required.")]
         public string? Category_Name { get; set; }

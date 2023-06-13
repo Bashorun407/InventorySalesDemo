@@ -9,6 +9,8 @@ namespace InventorySalesDemo.Application.DTOs.DtoForUpdate
 {
     public class SaleDtoForUpdate
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Data entry should be in date time"), DataType(DataType.Date)]
         public DateTime Date_Of_Sales { get; set; }
 

@@ -11,13 +11,6 @@ namespace InventorySalesDemo.Application.DTOs.DtoForCreation
 {
     public class ProductInSaleDtoForCreation
     {
-        [Key, Column(Order = 0)]
-        [ForeignKey(nameof(Sale))]
-        public int Sales_Id { get; set; } //Sales_Id
-
-        [Key, Column(Order = 1)]
-        [ForeignKey(nameof(Product))]
-        public int Product_Id { get; set; }
 
         [Required(ErrorMessage = "Data entry has to be integer"), Column(Order = 2), Range(1, uint.MaxValue)]
         public int Quantity { get; set; }

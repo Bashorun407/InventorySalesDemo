@@ -11,8 +11,7 @@ namespace InventorySalesDemo.Application.DTOs.DtoForUpdate
 {
     public class ProductDtoForUpdate
     {
-        [ForeignKey(nameof(ProductInSale))]
-        public int Product_Type_Code { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Data entry should be in strings"), DataType(DataType.Text), MaxLength(20)]
         public string? Product_Name { get; set; }
