@@ -1,3 +1,4 @@
+using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.WebApi.ServiceExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+var logger = app.Services.GetRequiredService<ILoggerManager>();
+app.ConfigureExceptionHandler(logger);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,8 +26,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else if (app.Environment.IsDevelopment())
+{
+    app.UseHsts();
+}
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseForwardedHeaders(new ForwardedHeadersOptions()
+{
+    ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.All
+});
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
