@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using InventorySales.CoreServiceContract.Contract;
 using InventorySalesDemo.Application.Common;
+using InventorySalesDemo.Application.DTOs.DtoForCreation;
+using InventorySalesDemo.Application.DTOs.DtoForDisplay;
+using InventorySalesDemo.Application.DTOs.DtoForUpdate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +25,7 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public Task CreateDailyInventoryLevel(InventorySalesDemo.Application.DTOs.DtoForCreation.DailyInventoryLevelDtoForCreation dailyInventoryLevelDtoForCreation)
+        public Task CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevelDtoForCreation)
         {
             throw new NotImplementedException();
         }
@@ -32,17 +35,17 @@ namespace InventorySalesDemo.ServiceRepository.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<InventorySalesDemo.Application.DTOs.DtoForDisplay.DailyInventoryLevelDtoForDisplay>> GetAllDailyInventoryLevels()
+        public Task<IEnumerable<DailyInventoryLevelDtoForDisplay>> GetAllDailyInventoryLevels()
         {
             throw new NotImplementedException();
         }
 
-        public Task<InventorySalesDemo.Application.DTOs.DtoForDisplay.DailyInventoryLevelDtoForDisplay> GetDailyInventoryLevelById(int dailyInventoryLevelId)
+        public Task<DailyInventoryLevelDtoForDisplay> GetDailyInventoryLevelById(int dailyInventoryLevelId)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateDailyInventoryLevel(InventorySalesDemo.Application.DTOs.DtoForUpdate.DailyInventoryLevelDtoForUpdate dailyInventoryLevelDtoForUpdate, bool trackChanges)
+        public Task UpdateDailyInventoryLevel(DailyInventoryLevelDtoForUpdate dailyInventoryLevelDtoForUpdate, bool trackChanges)
         {
             throw new NotImplementedException();
         }
