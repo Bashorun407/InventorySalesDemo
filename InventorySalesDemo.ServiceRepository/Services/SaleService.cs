@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using InventorySales.CoreServiceContract.Contract;
 using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,27 +25,27 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public Task CreateSale(SaleDtoForCreation sale)
+        public void CreateSale(SaleDtoForCreation sale)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteSale(int saleId)
+        public void DeleteSale(int id, bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<SaleDtoForDisplay>> GetAllSale()
+        public Task<IEnumerable<SaleDtoForDisplay>> GetAllSalesAsync(bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task<SaleDtoForDisplay> GetSaleById(int saleId)
+        public Task<SaleDtoForDisplay> GetSaleByIdAsync(int id, bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateSale(SaleDtoForUpdate sale)
+        public void UpdateSale(int id, SaleDtoForUpdate sale)
         {
             throw new NotImplementedException();
         }

@@ -4,6 +4,7 @@ using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,27 +27,27 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public Task CreateProductType(ProductTypeDtoForCreation productType)
+        public void CreateProductType(ProductTypeDtoForCreation productType)
         {
             throw new NotImplementedException();
         }
 
-        public Task DeleteProductType(int productTypeId)
+        public void DeleteProductType(int id, bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ProductTypeDtoForDisplay>> GetAllProductType()
+        public Task<IEnumerable<ProductTypeDtoForDisplay>> GetAllProductTypeAsync(bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ProductTypeDtoForDisplay> GetProductTypeById(int productTypeId)
+        public Task<ProductTypeDtoForDisplay> GetProductTypeByIdAsync(int id, bool trackChanges)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateProductType(ProductTypeDtoForUpdate productType)
+        public void UpdateProductType(int id, ProductTypeDtoForUpdate productType)
         {
             throw new NotImplementedException();
         }

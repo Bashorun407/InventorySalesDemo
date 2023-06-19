@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using InventorySales.CoreServiceContract.Contract;
 using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.Domain.Entities;
+using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,29 +26,48 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public Task CreateProductInSale(ProductDtoForCreation productDtoForCreation)
+        public async void CreateProductInSale(ProductInSaleDtoForCreation productInSale)
         {
-            throw new NotImplementedException();
+            var ProductInSaleEntity = _mapper.Map<ProductInSale>(productInSale);
+            _repository.productInSaleRepository.CreateProductInSale(ProductInSaleEntity);
+            await _repository.SaveAsync();
         }
 
-        public Task DeleteProductInSale(int productInSaleId)
+        public async void DeleteProductInSale(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var productInSale = await _repository.productInSaleRepository.GetProductInSaleById(id, trackChanges);
+            if (productInSale != null)
+            {
+                _repository.productInSaleRepository.DeleteProductInSale(productInSale);
+                await _repository.SaveAsync();
+            }
+
         }
 
-        public Task<IEnumerable<ProductDtoForDisplay>> GetAllProductInSale()
+        public async Task<IEnumerable<ProductInSaleDtoForDisplay>> GetAllProductInSaleAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            var productInSale = await _repository.productInSaleRepository.GetAllProductInSaleAsync(trackChanges);
+
+            var productInSaleToReturn = _mapper.Map<IEnumerable<ProductInSaleDtoForDisplay>>(productInSale);
+
+            return productInSaleToReturn;
         }
 
-        public Task<ProductDtoForUpdate> GetProductInSaleById(int productInSaleId)
+        public async Task<ProductInSaleDtoForDisplay> GetProductInSaleById(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var productInSale = await _repository.productInSaleRepository.GetProductInSaleById(id, trackChanges);
+            var productInsaleToReturn = _mapper.Map<ProductInSaleDtoForDisplay>(productInSale);
+
+            return productInsaleToReturn;
         }
 
-        public Task UpdateProductInSale(ProductDtoForUpdate productDtoForUpdate, bool trackChanges)
+        public async void UpdateProductInSale(int id, ProductDtoForUpdate productInSale, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var ProductInSale = await _repository.productInSaleRepository.GetProductInSaleById(id, trackChanges);
+            _mapper.Map(productInSale, ProductInSale);
+
+           await _repository.SaveAsync();
+
         }
     }
 }

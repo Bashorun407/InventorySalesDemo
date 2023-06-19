@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using InventorySales.CoreServiceContract.Contract;
 using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.Domain.Entities;
+using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,29 +26,46 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public Task CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevelDtoForCreation)
+        public async void CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevel)
         {
-            throw new NotImplementedException();
+            var DailyInventoryEntity = _mapper.Map<DailyInventoryLevel>(dailyInventoryLevel);
+            _repository.dailyInventoryLevelRepository.CreateDailyInventoryLevel(DailyInventoryEntity);
+            await _repository.SaveAsync();
+
         }
 
-        public Task DeleteDailyInventoryLevel(int dailyInventoryLevelId)
+        public async void DeleteDailyInventoryLevel(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var DailyInventoryToDelete =  await _repository.dailyInventoryLevelRepository.GetDailyInventoryLevelById(id, trackChanges);
+            if (DailyInventoryToDelete != null)
+            {
+                _repository.dailyInventoryLevelRepository.DeleteDailyInventoryLevel(DailyInventoryToDelete);
+                await _repository.SaveAsync();
+            }
+
         }
 
-        public Task<IEnumerable<DailyInventoryLevelDtoForDisplay>> GetAllDailyInventoryLevels()
+        public async Task<IEnumerable<DailyInventoryLevelDtoForDisplay>> GetAllDailyInventoryLevelAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            var dailyInventory = await _repository.dailyInventoryLevelRepository.GetAllDailyInventoryLevelAsync(trackChanges);
+            var dailyInventoryToReturn = _mapper.Map<IEnumerable<DailyInventoryLevelDtoForDisplay>>(dailyInventory);
+
+            return dailyInventoryToReturn;
         }
 
-        public Task<DailyInventoryLevelDtoForDisplay> GetDailyInventoryLevelById(int dailyInventoryLevelId)
+        public async Task<DailyInventoryLevelDtoForDisplay> GetDailyInventoryLevelById(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var dailyInventoryEntity = await _repository.dailyInventoryLevelRepository.GetDailyInventoryLevelById(id, trackChanges);
+            var dailyInventoryToReturn = _mapper.Map<DailyInventoryLevelDtoForDisplay>(dailyInventoryEntity);
+            return dailyInventoryToReturn;
         }
 
-        public Task UpdateDailyInventoryLevel(DailyInventoryLevelDtoForUpdate dailyInventoryLevelDtoForUpdate, bool trackChanges)
+        public async void UpdateDailyInventoryLevel(int id, DailyInventoryLevelDtoForUpdate dailyInventoryLevel, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var dailyInventoryToUpdate = _repository.dailyInventoryLevelRepository.GetDailyInventoryLevelById(id, trackChanges);
+            //to update
+            await _mapper.Map(dailyInventoryLevel, dailyInventoryToUpdate);
+            await _repository.SaveAsync();
         }
     }
 }

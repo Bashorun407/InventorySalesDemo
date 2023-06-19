@@ -14,7 +14,7 @@ namespace InventorySalesDemo.ServiceContract.Interfaces
         Task<IEnumerable<DailyInventoryLevelDtoForDisplay>> GetAllDailyInventoryLevelAsync(bool trackChanges);
         Task<DailyInventoryLevelDtoForDisplay> GetDailyInventoryLevelById(int id, bool trackChanges);
         void CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevel);
-        void UpdateDailyInventoryLevel(int id, DailyInventoryLevelDtoForUpdate dailyInventoryLevel);
+        void UpdateDailyInventoryLevel(int id, DailyInventoryLevelDtoForUpdate dailyInventoryLevel, bool trackChanges);
         void DeleteDailyInventoryLevel(int id, bool trackChanges);
     }
 }

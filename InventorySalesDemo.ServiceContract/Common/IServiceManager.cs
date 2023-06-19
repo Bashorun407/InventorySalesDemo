@@ -1,4 +1,5 @@
-﻿using InventorySales.CoreServiceContract.Contract;
+﻿
+using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
