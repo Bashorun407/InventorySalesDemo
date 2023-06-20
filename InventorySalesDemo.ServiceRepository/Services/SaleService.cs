@@ -3,6 +3,7 @@ using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.Domain.Entities;
 using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,29 +26,46 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public void CreateSale(SaleDtoForCreation sale)
+        public async void CreateSale(SaleDtoForCreation sale)
         {
-            throw new NotImplementedException();
+            var SalesEntity = _mapper.Map<Sale>(sale);
+            _repository.saleRepository.CreateSale(SalesEntity);
+
+            await _repository.SaveAsync();
         }
 
-        public void DeleteSale(int id, bool trackChanges)
+        public async void DeleteSale(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var SaleEntity = await _repository.saleRepository.GetSaleById(id, trackChanges);
+
+            if (SaleEntity != null)
+            {
+                _repository.saleRepository.DeleteSale(SaleEntity);
+                await _repository.SaveAsync();
+            }
         }
 
-        public Task<IEnumerable<SaleDtoForDisplay>> GetAllSalesAsync(bool trackChanges)
+        public async Task<IEnumerable<SaleDtoForDisplay>> GetAllSalesAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            var SaleEntity = await _repository.saleRepository.GetAllSaleAsync(trackChanges);
+            var saleToReturn = _mapper.Map<IEnumerable<SaleDtoForDisplay>>(SaleEntity);
+
+            return saleToReturn;
         }
 
-        public Task<SaleDtoForDisplay> GetSaleByIdAsync(int id, bool trackChanges)
+        public async Task<SaleDtoForDisplay> GetSaleByIdAsync(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var SaleEntity = await _repository.saleRepository.GetSaleById(id, trackChanges);
+            var saleToReturn = _mapper.Map<SaleDtoForDisplay>(SaleEntity);
+
+            return saleToReturn;
         }
 
-        public void UpdateSale(int id, SaleDtoForUpdate sale)
+        public async void UpdateSale(int id, SaleDtoForUpdate sale, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var SaleGotten = await _repository.saleRepository.GetSaleById(id, trackChanges);
+            _mapper.Map(sale, SaleGotten);
+            await _repository.SaveAsync();
         }
     }
 }

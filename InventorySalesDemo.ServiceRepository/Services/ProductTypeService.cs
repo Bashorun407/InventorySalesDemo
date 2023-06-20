@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using InventorySales.CoreServiceContract.Contract;
 using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.DTOs.DtoForCreation;
 using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
+using InventorySalesDemo.Domain.Entities;
 using InventorySalesDemo.ServiceContract.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,29 +27,47 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public void CreateProductType(ProductTypeDtoForCreation productType)
+        public async void CreateProductType(ProductTypeDtoForCreation productType)
         {
-            throw new NotImplementedException();
+            var ProductTypeEntity = _mapper.Map<ProductType>(productType);
+            _repository.productTypeRepository.CreateProductType(ProductTypeEntity);
+            await _repository.SaveAsync();
         }
 
-        public void DeleteProductType(int id, bool trackChanges)
+        public async void DeleteProductType(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var ProductTypeEntity = await _repository.productTypeRepository.GetProductTypeById(id, trackChanges);
+
+            if (ProductTypeEntity != null)
+            {
+                _repository.productTypeRepository.DeleteProductType(ProductTypeEntity);
+                await _repository.SaveAsync();
+            }
         }
 
-        public Task<IEnumerable<ProductTypeDtoForDisplay>> GetAllProductTypeAsync(bool trackChanges)
+        public async Task<IEnumerable<ProductTypeDtoForDisplay>> GetAllProductTypeAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            var allProducts = await _repository.productTypeRepository.GetAllProductTypeAsync(trackChanges);
+            var productsToReturn = _mapper.Map<IEnumerable<ProductTypeDtoForDisplay>>(allProducts);
+
+            return productsToReturn;
         }
 
-        public Task<ProductTypeDtoForDisplay> GetProductTypeByIdAsync(int id, bool trackChanges)
+        public async Task<ProductTypeDtoForDisplay> GetProductTypeByIdAsync(int id, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var ProductTypeEntity = await _repository.productTypeRepository.GetProductTypeById(id, trackChanges);
+            var productToReturn = _mapper.Map<ProductTypeDtoForDisplay>(ProductTypeEntity);
+
+            return productToReturn;
         }
 
-        public void UpdateProductType(int id, ProductTypeDtoForUpdate productType)
+        public async void UpdateProductType(int id, ProductTypeDtoForUpdate productType, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var ProductType = await _repository.productTypeRepository.GetProductTypeById(id, trackChanges);
+            _mapper.Map(productType, ProductType);
+            
+            await _repository.SaveAsync();
+
         }
     }
 }

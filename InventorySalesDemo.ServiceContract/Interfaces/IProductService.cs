@@ -1,4 +1,5 @@
 ﻿using InventorySalesDemo.Application.DTOs.DtoForCreation;
+using InventorySalesDemo.Application.DTOs.DtoForDisplay;
 using InventorySalesDemo.Application.DTOs.DtoForUpdate;
 using InventorySalesDemo.Domain.Entities;
 using System;
@@ -11,10 +12,10 @@ namespace InventorySalesDemo.ServiceContract.Interfaces
 {
     public interface IProductService
     {
-        Task<IEnumerable<Product>> GetAllProductsAsync(bool trackChanges);
-        Task<Product> GetProductByIdAsync(int id, bool trackChanges);
+        Task<IEnumerable<ProductDtoForDisplay>> GetAllProductsAsync(bool trackChanges);
+        Task<ProductDtoForDisplay> GetProductByIdAsync(int id, bool trackChanges);
         void CreateProduct(ProductDtoForCreation product);
-        void UpdateProduct(int id, ProductDtoForUpdate product);
+        void UpdateProduct(int id, ProductDtoForUpdate product, bool trackChanges);
         void DeleteProduct(int id, bool trackChanges);
     }
 }
