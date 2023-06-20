@@ -10,10 +10,10 @@ namespace InventorySales.CoreServiceContract.Common
 {
     public interface IServiceManager
     {
-        public IDailyInventoryLevelService DailyInventoryLevelService { get; set; }
-        public IProductInSaleService ProductInSaleService { get; set; }
-        public IProductService ProductService { get; set; }
-        public IProductTypeService ProductTypeService { get; set; }
-        public ISaleService SaleService { get; set; }
+        public IDailyInventoryLevelService DailyInventoryLevelService { get; }
+        public IProductInSaleService ProductInSaleService { get; }
+        public IProductService ProductService { get; }
+        public IProductTypeService ProductTypeService { get; }
+        public ISaleService SaleService { get; }
     }
 }

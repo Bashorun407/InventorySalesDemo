@@ -1,5 +1,6 @@
 ﻿using InventorySalesDemo.Application.Common;
 using InventorySalesDemo.Application.Contracts;
+using InventorySalesDemo.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace InventorySalesDemo.Persistence.Common
         private readonly Lazy<IProductRepository> _productRepository;
         private readonly Lazy<IProductTypeRepository> _productTypeRepository;
         private readonly Lazy<IRefCalendarRepository> _refCalendarRepository;
+        private readonly Lazy<ISaleRepository> _saleRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -24,21 +26,21 @@ namespace InventorySalesDemo.Persistence.Common
         }
 
 
-        public IDailyInventoryLevelRepository dailyInventoryLevelRepository => 
+        public IDailyInventoryLevelRepository dailyInventoryLevelRepository => _dailyInventoryLevelRepository.Value;
 
-        public IProductInSaleRepository productInSaleRepository => throw new NotImplementedException();
+        public IProductInSaleRepository productInSaleRepository => _productInSaleRepository.Value;
 
-        public IProductRepository productRepository => throw new NotImplementedException();
+        public IProductRepository productRepository => _productRepository.Value;
 
-        public IProductTypeRepository productTypeRepository => throw new NotImplementedException();
+        public IProductTypeRepository productTypeRepository => _productTypeRepository.Value;
 
-        public IRefCalendarRepository refCalendarRepository => throw new NotImplementedException();
+        public IRefCalendarRepository refCalendarRepository => _refCalendarRepository.Value;
 
-        public ISaleRepository saleRepository => throw new NotImplementedException();
+        public ISaleRepository saleRepository => _saleRepository.Value;
 
-        public Task SaveAsync()
+        public async Task SaveAsync()
         {
-            throw new NotImplementedException();
+           await _repositoryContext.SaveChangesAsync();
         }
     }
 }
