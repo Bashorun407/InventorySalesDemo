@@ -61,7 +61,7 @@ namespace InventorySalesDemo.ServiceRepository.Services
             return productInsaleToReturn;
         }
 
-        public async void UpdateProductInSale(int id, ProductDtoForUpdate productInSale, bool trackChanges)
+        public async void UpdateProductInSale(int id, ProductInSaleDtoForUpdate productInSale, bool trackChanges)
         {
             var ProductInSale = await _repository.productInSaleRepository.GetProductInSaleById(id, trackChanges);
             _mapper.Map(productInSale, ProductInSale);

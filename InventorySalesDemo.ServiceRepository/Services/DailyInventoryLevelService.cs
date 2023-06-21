@@ -26,13 +26,14 @@ namespace InventorySalesDemo.ServiceRepository.Services
             _mapper = mapper;
         }
 
-        public async void CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevel)
+        public async void CreateDailyInventoryLevel(DailyInventoryLevelDtoForCreation dailyInventoryLevel) 
         {
-            var DailyInventoryEntity = _mapper.Map<DailyInventoryLevel>(dailyInventoryLevel);
-            _repository.dailyInventoryLevelRepository.CreateDailyInventoryLevel(DailyInventoryEntity);
-            await _repository.SaveAsync();
+                var DailyInventoryEntity = _mapper.Map<DailyInventoryLevel>(dailyInventoryLevel);
+                _repository.dailyInventoryLevelRepository.CreateDailyInventoryLevel(DailyInventoryEntity);
+                await _repository.SaveAsync();
 
         }
+            
 
         public async void DeleteDailyInventoryLevel(int id, bool trackChanges)
         {

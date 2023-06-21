@@ -12,7 +12,7 @@ namespace InventorySalesDemo.Application.DTOs.DtoForCreation
     public class DailyInventoryLevelDtoForCreation
     {
 
-        [Required(ErrorMessage = "Data entry has to be text"), DataType(DataType.Text), MaxLength(20), Column(Order = 2)]
+        [Required(ErrorMessage = "Data entry has to be integer"), Column(Order = 2)]
         public int Level { get; set; }
     }
 }
