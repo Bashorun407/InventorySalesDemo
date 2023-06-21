@@ -38,7 +38,7 @@ namespace InventorySalesDemo.ServiceRepository.Common
                 () => new  SaleService(repository, logger, mapper));
         }
 
-        public IDailyInventoryLevelService DailyInventoryLevelService { get => _dailyInventoService.Value; }
+        public IDailyInventoryLevelService DailyInventoryLevelService => _dailyInventoService.Value;
         public IProductInSaleService ProductInSaleService { get => _productInSaleService.Value; }
         public IProductService ProductService { get => _productService.Value; }
         public IProductTypeService ProductTypeService { get => _productTypeService.Value; }
