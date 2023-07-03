@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AC5CBFF0-5245-4A5F-A043-5DBE1211ED34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.Domain", "InventorySalesDemo.Domain\InventorySalesDemo.Domain.csproj", "{999DE558-69D8-4B91-B601-131B274891EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.Domain", "InventorySalesDemo.Domain\InventorySalesDemo.Domain.csproj", "{999DE558-69D8-4B91-B601-131B274891EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.Application", "InventorySalesDemo.Application\InventorySalesDemo.Application.csproj", "{9782F2F2-41CD-4F26-A6C2-F4F06D3CD49C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.Application", "InventorySalesDemo.Application\InventorySalesDemo.Application.csproj", "{9782F2F2-41CD-4F26-A6C2-F4F06D3CD49C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.Persistence", "InventorySalesDemo.Persistence\InventorySalesDemo.Persistence.csproj", "{1842A323-2C09-41C0-9A42-8AF1E3B2A098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.Persistence", "InventorySalesDemo.Persistence\InventorySalesDemo.Persistence.csproj", "{1842A323-2C09-41C0-9A42-8AF1E3B2A098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.ServiceContract", "InventorySalesDemo.ServiceContract\InventorySalesDemo.ServiceContract.csproj", "{7A2227BC-4972-46AA-81BD-4B0FF5ACF2DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.ServiceContract", "InventorySalesDemo.ServiceContract\InventorySalesDemo.ServiceContract.csproj", "{7A2227BC-4972-46AA-81BD-4B0FF5ACF2DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.ServiceRepository", "InventorySalesDemo.ServiceRepository\InventorySalesDemo.ServiceRepository.csproj", "{98CB7603-A96C-4385-99D7-537E7EE023EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.ServiceRepository", "InventorySalesDemo.ServiceRepository\InventorySalesDemo.ServiceRepository.csproj", "{98CB7603-A96C-4385-99D7-537E7EE023EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventorySalesDemo.WebApi", "InventorySalesDemo.WebApi\InventorySalesDemo.WebApi.csproj", "{950726A4-C6A5-4BE6-88DE-B09BB85525B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventorySalesDemo.WebApi", "InventorySalesDemo.WebApi\InventorySalesDemo.WebApi.csproj", "{950726A4-C6A5-4BE6-88DE-B09BB85525B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{5E4A6642-756F-46C9-AB77-74DE54612DF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{950726A4-C6A5-4BE6-88DE-B09BB85525B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950726A4-C6A5-4BE6-88DE-B09BB85525B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{950726A4-C6A5-4BE6-88DE-B09BB85525B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E4A6642-756F-46C9-AB77-74DE54612DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E4A6642-756F-46C9-AB77-74DE54612DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E4A6642-756F-46C9-AB77-74DE54612DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E4A6642-756F-46C9-AB77-74DE54612DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +73,7 @@ Global
 		{7A2227BC-4972-46AA-81BD-4B0FF5ACF2DE} = {85582E96-AEE6-4B91-9615-7860DD0D6F6F}
 		{98CB7603-A96C-4385-99D7-537E7EE023EA} = {85582E96-AEE6-4B91-9615-7860DD0D6F6F}
 		{950726A4-C6A5-4BE6-88DE-B09BB85525B6} = {AC5CBFF0-5245-4A5F-A043-5DBE1211ED34}
+		{5E4A6642-756F-46C9-AB77-74DE54612DF6} = {BA14E61F-EB82-40C9-8F7F-103CBD106354}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {585EFFB0-D3F4-4E35-A39D-88EC75ABFA77}

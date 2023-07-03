@@ -13,7 +13,7 @@ namespace InventorySalesDemo.Domain.Entities
     {
         [Key, Column(Order = 0)]
         [ForeignKey(nameof(Sale))]
-        public int Sales_Id { get; set; } //Sales_Id
+        public int Sales_Id { get; set; } 
 
         [Key, Column(Order = 1)]
         [ForeignKey(nameof(Product))]

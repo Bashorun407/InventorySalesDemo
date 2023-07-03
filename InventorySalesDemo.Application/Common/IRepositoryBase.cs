@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace InventorySalesDemo.Application.Common
 {
-    public interface IRepositoryBase
+    public interface IRepositoryBase<T>
     {
-        IQueryable<T> FindAll(bool trackChanges);
-        IQueryable<T>FindByCondition(Expression<Func<Task, bool>> expression, bool trackChanges);
-        void Create(T entity);
+        IQueryable<T>FindAllAsync(bool trackChanges);
+        IQueryable<T>FindByConditionAsync(Expression<Func<T, bool>> expression, bool trackChanges);
+        void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-    }
-
-    public class T
-    {
     }
 }

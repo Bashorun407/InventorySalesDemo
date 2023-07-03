@@ -15,5 +15,6 @@ namespace InventorySalesDemo.Application.Common
         IProductTypeRepository ProductTypeRepository { get; }
         IRefCalendarRepository RefCalendarRepository { get; }
         ISaleRepository SaleRepository { get; }
+        Task SaveAsync();
     }
 }

@@ -9,9 +9,9 @@ namespace InventorySalesDemo.Application.Contracts
 {
     public interface ISaleRepository
     {
-        Task<IEnumerable<Sale>> GetAllAsync(bool trackChanges);
-        Task<Sale> GetSaleById(int Id, bool trackChanges);
-        void CreateSale(Sale entity);
-        void DeleteSale(Sale entity);
+        Task<IEnumerable<Sale>> GetAllSaleAsync(bool trackChanges);
+        Task<Sale?> GetSaleByIdAsync(int Id, bool trackChanges);
+        void AddSale(Sale sale);
+        void DeleteSale(Sale sale);
     }
 }
