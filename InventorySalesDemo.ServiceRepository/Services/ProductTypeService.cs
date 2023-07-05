@@ -52,7 +52,7 @@ namespace InventorySalesDemo.ServiceRepository.Services
             return productTypeEntities;
         }
 
-        public async Task<ProductTypeForDisplayDto> GetProductTypeAsync(int Id, bool trackChanges)
+        public async Task<ProductTypeForDisplayDto> GetProductTypeByIdAsync(int Id, bool trackChanges)
         {
             var GetProductType = await _repository.ProductTypeRepository.GetProductTypeByIdAsync(Id, trackChanges);
             var ProductTypeEntity = _mapper.Map<ProductTypeForDisplayDto>(GetProductType);

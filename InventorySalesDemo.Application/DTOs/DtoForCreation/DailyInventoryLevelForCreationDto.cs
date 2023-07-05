@@ -11,7 +11,7 @@ namespace InventorySalesDemo.Application.DTOs.DtoForCreation
 {
     public class DailyInventoryLevelForCreationDto
     {
-        [Required(ErrorMessage = "Data entry has to be text"), DataType(DataType.Text), MaxLength(20), Column(Order = 2)]
+        [Required(ErrorMessage = "Data entry has to be text"), Column(Order = 2)]
         public int Level { get; set; }
     }
 }

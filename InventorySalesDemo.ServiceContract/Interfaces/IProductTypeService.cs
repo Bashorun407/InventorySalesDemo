@@ -12,7 +12,7 @@ namespace InventorySalesDemo.ServiceContract.Interfaces
     public interface IProductTypeService
     {
         Task<IEnumerable<ProductTypeForDisplayDto>> GetAllProductTypeAsync(bool trackChanges);
-        Task<ProductTypeForDisplayDto> GetProductTypeAsync(int Id, bool trackChanges);
+        Task<ProductTypeForDisplayDto> GetProductTypeByIdAsync(int Id, bool trackChanges);
         Task<ProductTypeForDisplayDto> CreateProductTypeAsync(ProductTypeForCreationDto productTypeForCreationDto);
         Task UpdateProductTypeAsync(int Id, ProductTypeForUpdateDto productTypeForUpdateDto, bool trackChanges);
         Task DeleteProductTypeAsync(int Id, bool trackChanges);

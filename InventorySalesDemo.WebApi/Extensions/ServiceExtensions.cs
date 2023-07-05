@@ -46,6 +46,6 @@ namespace InventorySalesDemo.WebApi.Extensions
 
         //Configuration of DbContext and Sql Connection
         public static void ConfigureSQLContext(this IServiceCollection services, IConfiguration configuration) => services.AddDbContext<RepositoryContext>(opt =>
-                                                                                                                                                                                                                                opt.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
+        opt.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
     }
 }

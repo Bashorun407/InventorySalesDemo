@@ -48,7 +48,7 @@ namespace InventorySalesDemo.Persistence.Common
 
         public void Update(T entity)
         {
-            RepositoryContext?.Set<T>().Update(entity);
+            RepositoryContext.Set<T>().Update(entity);
         }
     }
 }

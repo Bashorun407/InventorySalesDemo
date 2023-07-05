@@ -51,7 +51,7 @@ namespace InventorySalesDemo.ServiceRepository.Services
             return productEntities;
         }
 
-        public async Task<ProductForDisplayDto> GetProductAsync(int Id, bool trackChanges)
+        public async Task<ProductForDisplayDto> GetProductByIdAsync(int Id, bool trackChanges)
         {
             var GetProduct = await _repository.ProductRepository.GetProductByIdAsync(Id, trackChanges);
             var ProductEntity = _mapper.Map<ProductForDisplayDto>(GetProduct);

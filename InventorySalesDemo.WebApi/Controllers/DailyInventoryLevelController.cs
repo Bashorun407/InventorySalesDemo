@@ -30,7 +30,7 @@ namespace InventorySalesDemo.WebApi.Controllers
             return Ok(dailyInventoryLevels);
         }
         [HttpGet("{Id}")]
-        public async Task<IActionResult> GetDailyInventoryLevel(int Id)
+        public async Task<IActionResult> GetDailyInventoryLevelById(int Id)
         {
             var dailyInventoryLevels = await _serviceManager.DailyInventoryLevelService.GetDailyInventoryLevelByIdAsync(Id, trackChanges: false);
             return Ok(dailyInventoryLevels);

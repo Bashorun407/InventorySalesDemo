@@ -18,12 +18,12 @@ namespace InventorySalesDemo.Persistence.Repositories
 
         public void AddProduct(Product product)
         {
-            throw new NotImplementedException();
+            Add(product);
         }
 
         public void DeleteProduct(Product product)
         {
-            throw new NotImplementedException();
+            Delete(product);
         }
 
         public async Task<IEnumerable<Product>> GetAllProductAsync(bool trackChanges)

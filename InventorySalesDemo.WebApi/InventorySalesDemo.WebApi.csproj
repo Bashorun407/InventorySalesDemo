@@ -32,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InventorySalesDemo.Application\InventorySalesDemo.Application.csproj" />
+    <ProjectReference Include="..\InventorySalesDemo.Domain\InventorySalesDemo.Domain.csproj" />
     <ProjectReference Include="..\InventorySalesDemo.Persistence\InventorySalesDemo.Persistence.csproj" />
     <ProjectReference Include="..\InventorySalesDemo.ServiceContract\InventorySalesDemo.ServiceContract.csproj" />
     <ProjectReference Include="..\InventorySalesDemo.ServiceRepository\InventorySalesDemo.ServiceRepository.csproj" />
