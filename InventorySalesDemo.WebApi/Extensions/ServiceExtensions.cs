@@ -23,7 +23,7 @@ namespace InventorySalesDemo.WebApi.Extensions
 
         }
 
-        //Configuration of IIS Integration for accpting requests from remote client computers and returns the appropriate response
+        //Configuration of IIS Integration for accepting requests from remote client computers and returns the appropriate response
         public static void ConfigureIISIntegration(this IServiceCollection services)
         {
             services.Configure<IISOptions>(options => { });
